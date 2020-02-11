@@ -3,6 +3,7 @@
 	"displayName": "testExtension",
 	"description": "Just trying the helloworld",
 	"version": "0.0.1",
+	"publisher": "Jon Overy",
 	"engines": {
 		"vscode": "^1.42.0"
 	},
@@ -20,6 +21,9 @@
 				"title": "Hello World"
 			}
 		]
+	},
+	"capabilities" : {
+		"documentFormattingProvider" : "true"
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",

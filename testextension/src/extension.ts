@@ -4,6 +4,8 @@ import * as vscode from 'vscode';
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
+var activatedState = false;
+
 export function activate(context: vscode.ExtensionContext) {
 
 	// Use the console to output diagnostic information (console.log) and errors (console.error)
@@ -17,11 +19,24 @@ export function activate(context: vscode.ExtensionContext) {
 		// The code you place here will be executed every time your command is executed
 
 		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello Jon!');
+		if (activatedState === false){
+			vscode.window.showInformationMessage('Hello Jon!');
+			activatedState = true;
+		}
+		else {
+			activatedState = false
+		}
+
+		
 	});
 
 	context.subscriptions.push(disposable);
 }
 
+
 // this method is called when your extension is deactivated
 export function deactivate() {}
+
+// "[java, typescript]": {
+// 	"editor.formatOnSave": false
+// 	}
