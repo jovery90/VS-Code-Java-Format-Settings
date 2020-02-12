@@ -1,6 +1,7 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
+import { format } from 'path';
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
@@ -21,9 +22,10 @@ export function activate(context: vscode.ExtensionContext) {
 		// Display a message box to the user
 		if (activatedState === false) {
 			vscode.window.showInformationMessage('DEACTIVATED Java formatting');
-			// vscode.workspace.getConfiguration('testextension');
+			const test = vscode.workspace.getConfiguration('testExtension');
+			test.inspect("formatOnSave")?.globalValue;
 
-
+			vscode.workspace.getConfiguration().update("editor.formatOnSave", false, true)
 
 			activatedState = true;
 		}
@@ -45,3 +47,12 @@ export function deactivate() { }
 // "[java, typescript]": {
 // 	"editor.formatOnSave": false
 // 	}
+
+
+// const pluginPrefs = theia.workspace.getConfiguration('myPlugin');
+// pluginPrefs.update('logLevel', 'debug', theia.ConfigurationTarget.User);
+
+// import { ConfigurationTarget, workspace } from 'vscode'; const configuration = workspace.getConfiguration(<YOUR_SECTION>); configuration.update(<SETTING_NAME>, <SETTING_VALUE>, ConfigurationTarget.Global).then(() => { // take action here });
+
+// await vscode.workspace.getConfiguration()
+// 	.update('editor.renderWhitespace', 'selection', vscode.ConfigurationTarget.Global);

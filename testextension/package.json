@@ -19,7 +19,9 @@
 			"title": "Toggle format on save",
 			"properties": {
 				"editor.formatOnSave": {
-					"default": false
+					"type": "boolean",
+					"default": false,
+					"description": "Toggles format on save"
 				}
 			}
 		},
@@ -31,7 +33,7 @@
 		]
 	},
 	"capabilities": {
-		"documentFormattingProvider": true
+		"documentFormattingProvider": "true"
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
