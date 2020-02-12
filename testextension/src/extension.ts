@@ -56,3 +56,8 @@ export function deactivate() { }
 
 // await vscode.workspace.getConfiguration()
 // 	.update('editor.renderWhitespace', 'selection', vscode.ConfigurationTarget.Global);
+
+// This is the solution, below, but precursor.  I should be able to change the editor.formatOnSave to the on paste
+// and such.  Also, the false stands for global, and the true stands for it's setting.  SEE BELOW:
+
+// vscode.workspace.getConfiguration().update("editor.formatOnSave", false, true)
