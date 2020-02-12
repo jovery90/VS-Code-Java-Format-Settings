@@ -15,6 +15,14 @@
 	],
 	"main": "./out/extension.js",
 	"contributes": {
+		"configuration": {
+			"title": "Toggle format on save",
+			"properties": {
+				"editor.formatOnSave": {
+					"default": false
+				}
+			}
+		},
 		"commands": [
 			{
 				"command": "extension.helloWorld",
@@ -22,8 +30,8 @@
 			}
 		]
 	},
-	"capabilities" : {
-		"documentFormattingProvider" : "true"
+	"capabilities": {
+		"documentFormattingProvider": true
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",

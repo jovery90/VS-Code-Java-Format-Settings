@@ -19,15 +19,20 @@ export function activate(context: vscode.ExtensionContext) {
 		// The code you place here will be executed every time your command is executed
 
 		// Display a message box to the user
-		if (activatedState === false){
-			vscode.window.showInformationMessage('Hello Jon!');
+		if (activatedState === false) {
+			vscode.window.showInformationMessage('DEACTIVATED Java formatting');
+			// vscode.workspace.getConfiguration('testextension');
+
+
+
 			activatedState = true;
 		}
 		else {
+			vscode.window.showInformationMessage('Java formatting now ACTIVE');
 			activatedState = false
 		}
 
-		
+
 	});
 
 	context.subscriptions.push(disposable);
@@ -35,7 +40,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 
 // this method is called when your extension is deactivated
-export function deactivate() {}
+export function deactivate() { }
 
 // "[java, typescript]": {
 // 	"editor.formatOnSave": false
