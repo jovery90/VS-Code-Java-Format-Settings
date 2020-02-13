@@ -25,12 +25,16 @@ export function activate(context: vscode.ExtensionContext) {
 			const test = vscode.workspace.getConfiguration('testExtension');
 			test.inspect("formatOnSave")?.globalValue;
 
-			vscode.workspace.getConfiguration().update("editor.formatOnSave", false, true)
+			vscode.workspace.getConfiguration().update("editor.formatOnSave", false, true) 
+			vscode.workspace.getConfiguration().update("editor.formatOnPaste", false, true)
+			vscode.workspace.getConfiguration().update("editor.formatOnType", false, true)
 
 			activatedState = true;
 		}
 		else {
 			vscode.workspace.getConfiguration().update("editor.formatOnSave", true, true)
+			vscode.workspace.getConfiguration().update("editor.formatOnPaste", true, true)
+			vscode.workspace.getConfiguration().update("editor.formatOnType", true, true)
 			vscode.window.showInformationMessage('ACTIVATED auto-formatting');
 			activatedState = false
 		}
@@ -44,7 +48,6 @@ export function activate(context: vscode.ExtensionContext) {
 
 // this method is called when your extension is deactivated
 export function deactivate() { }
-
 // "[java, typescript]": {
 // 	"editor.formatOnSave": false
 // 	}
