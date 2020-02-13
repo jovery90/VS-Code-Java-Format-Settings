@@ -21,7 +21,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 		// Display a message box to the user
 		if (activatedState === false) {
-			vscode.window.showInformationMessage('DEACTIVATED Java formatting');
+			vscode.window.showInformationMessage('DEACTIVATED auto-formatting');
 			const test = vscode.workspace.getConfiguration('testExtension');
 			test.inspect("formatOnSave")?.globalValue;
 
@@ -30,7 +30,8 @@ export function activate(context: vscode.ExtensionContext) {
 			activatedState = true;
 		}
 		else {
-			vscode.window.showInformationMessage('Java formatting now ACTIVE');
+			vscode.workspace.getConfiguration().update("editor.formatOnSave", true, true)
+			vscode.window.showInformationMessage('ACTIVATED auto-formatting');
 			activatedState = false
 		}
 
