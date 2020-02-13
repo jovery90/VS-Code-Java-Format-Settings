@@ -1,9 +1,16 @@
 {
-	"name": "testextension",
-	"displayName": "testExtension",
-	"description": "Just trying the helloworld",
+	"name": "vscode-user-format-commands",
+	"displayName": "Format User Settings Extension",
+	"description": "Change global user format settings via VS Code commands",
 	"version": "0.0.1",
-	"publisher": "Jon Overy",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/jovery90/Disable-Formatting-VSC-Extension"
+	},
+	"publisher": "jovery90",
+	"author": "Jon Overy",
+	"icon": "icon.png",
 	"engines": {
 		"vscode": "^1.42.0"
 	},
@@ -11,24 +18,19 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:extension.helloWorld"
+		"onCommand:extension.enable",
+		"onCommand:extension.disable"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
-		"configuration": {
-			"title": "Toggle format on save",
-			"properties": {
-				"editor.formatOnSave": {
-					"type": "boolean",
-					"default": false,
-					"description": "Toggles format on save"
-				}
-			}
-		},
 		"commands": [
 			{
-				"command": "extension.helloWorld",
-				"title": "Hello World"
+				"command": "extension.enable",
+				"title": "Formatting: ENABLE"
+			},
+			{
+				"command": "extension.disable",
+				"title": "Formatting:  DISABLE"
 			}
 		]
 	},
