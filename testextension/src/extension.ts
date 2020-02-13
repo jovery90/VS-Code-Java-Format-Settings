@@ -39,20 +39,3 @@ export function activate(context: vscode.ExtensionContext) {
 
 // this method is called when your extension is deactivated
 export function deactivate() { }
-// "[java, typescript]": {
-// 	"editor.formatOnSave": false
-// 	}
-
-
-// const pluginPrefs = theia.workspace.getConfiguration('myPlugin');
-// pluginPrefs.update('logLevel', 'debug', theia.ConfigurationTarget.User);
-
-// import { ConfigurationTarget, workspace } from 'vscode'; const configuration = workspace.getConfiguration(<YOUR_SECTION>); configuration.update(<SETTING_NAME>, <SETTING_VALUE>, ConfigurationTarget.Global).then(() => { // take action here });
-
-// await vscode.workspace.getConfiguration()
-// 	.update('editor.renderWhitespace', 'selection', vscode.ConfigurationTarget.Global);
-
-// This is the solution, below, but precursor.  I should be able to change the editor.formatOnSave to the on paste
-// and such.  Also, the false stands for global, and the true stands for it's setting.  SEE BELOW:
-
-// vscode.workspace.getConfiguration().update("editor.formatOnSave", false, true)
