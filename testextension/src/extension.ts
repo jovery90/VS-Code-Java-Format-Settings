@@ -16,19 +16,14 @@ export function activate(context: vscode.ExtensionContext) {
 	// The commandId parameter must match the command field in package.json
 	let disposable = vscode.commands.registerCommand('extension.disable', () => {
 		// The code you place here will be executed every time your command is executed
-		vscode.window.showInformationMessage('DEACTIVATED auto-formatting');
-
-		vscode.workspace.getConfiguration().update("editor.formatOnSave", false, true)
-		vscode.workspace.getConfiguration().update("editor.formatOnPaste", false, true)
-		vscode.workspace.getConfiguration().update("editor.formatOnType", false, true)
+		vscode.window.showInformationMessage('DEACTIVATED java auto-formatting');
+		vscode.workspace.getConfiguration().update("java.format.enabled", false, true)
 	});
 
 	let disposable2 = vscode.commands.registerCommand('extension.enable', () => {
 
-		vscode.workspace.getConfiguration().update("editor.formatOnSave", true, true)
-		vscode.workspace.getConfiguration().update("editor.formatOnPaste", true, true)
-		vscode.workspace.getConfiguration().update("editor.formatOnType", true, true)
-		vscode.window.showInformationMessage('ACTIVATED auto-formatting');
+		vscode.workspace.getConfiguration().update("java.format.enabled", true, true)
+		vscode.window.showInformationMessage('ACTIVATED java auto-formatting');
 
 	});
 

@@ -1,12 +1,12 @@
 {
-	"name": "vscode-user-format-commands",
-	"displayName": "Format User Settings Extension",
-	"description": "Change global user format settings via VS Code commands",
-	"version": "1.1.0",
+	"name": "java-format-commands",
+	"displayName": "Format User Settings Extension for Java files",
+	"description": "Change global user format settings via VS Code commands for .java files",
+	"version": "1.0.0",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/jovery90/Disable-Formatting-VSC-Extension"
+		"url": "https://github.com/jovery90/VS-Code-Java-Format-Settings"
 	},
 	"publisher": "jovery90",
 	"author": "Jon Overy",
@@ -26,11 +26,11 @@
 		"commands": [
 			{
 				"command": "extension.enable",
-				"title": "Formatting: ENABLE"
+				"title": "Java Formatting: ENABLE"
 			},
 			{
 				"command": "extension.disable",
-				"title": "Formatting:  DISABLE"
+				"title": "Java Formatting:  DISABLE"
 			}
 		]
 	},
